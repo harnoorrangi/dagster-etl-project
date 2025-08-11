@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: dlt_main_dataset
+    schema: dlt_main_dataset
+    tables:
+      - name: iris

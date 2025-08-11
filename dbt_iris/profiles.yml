@@ -1,0 +1,7 @@
+dbt_iris:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_DBT_PATH') }}"
+      schema: analytics
