@@ -1,0 +1,17 @@
+Running with dbt=1.10.7
+Registered adapter: duckdb=1.9.4
+[[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_iris.example
+Found 2 models, 1 source, 429 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 1 START sql table model analytics.mart_iris_features ...................... [RUN]
+1 of 1 OK created sql table model analytics.mart_iris_features ................. [[32mOK[0m in 0.05s]
+
+Finished running 1 table model in 0 hours 0 minutes and 0.15 seconds (0.15s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1

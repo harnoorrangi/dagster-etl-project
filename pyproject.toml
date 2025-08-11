@@ -14,10 +14,9 @@ dependencies = [
     "scikit-learn>=1.3",
     "python-dotenv>=1.0",
     "polars",
-    "dagster-dlt>=0.27.5",
-    "loguru>=0.7.3",
+    "dagster-duckdb>=0.27.5",
+    "pyarrow>=21.0.0",
 ]
-
 
 
 [dependency-groups]
