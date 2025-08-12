@@ -8,3 +8,4 @@ Simple Dagster ETL pipeline.
 - all the intermediate assets are stored in Duckdb
 
 
+<img width="1607" height="281" alt="Screenshot 2025-08-11 at 10 13 29 PM" src="https://github.com/user-attachments/assets/c467be31-0bee-4726-a413-4e1d1f5dc7f5" />
