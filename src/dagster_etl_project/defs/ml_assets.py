@@ -109,20 +109,18 @@ def predictions(trained_model, feature_table):
     if trained_model.is_empty():
         raise RuntimeError("trained_model is empty; cannot generate predictions")
 
-    # Grab latest row (named) OR use select(...).item()
     latest = trained_model.sort("trained_at", descending=True).row(0, named=True)
 
-    # Expect columns: version (int), model (bytes/blob), payload optionally inside model
+
     version = latest["version"]
     model_blob = latest["model"]
     if isinstance(model_blob, memoryview):
         model_blob = model_blob.tobytes()
     elif not isinstance(model_blob, (bytes, bytearray)):
-        # In case Arrow/Polars wrapped it oddly
         model_blob = bytes(model_blob)
 
     payload = pickle.loads(model_blob)
-    model = payload["sk_model"]                     # sklearn model
+    model = payload["sk_model"]                    
     feature_cols: List[str] = payload["feature_cols"]
     classes: List[str] = payload["classes"]
 
@@ -131,11 +129,10 @@ def predictions(trained_model, feature_table):
     if missing:
         raise RuntimeError(f"feature_table missing columns required by model: {missing}")
 
-    # sklearn wants numpy or pandas; numpy is fine
+
     X = feature_table.select(feature_cols).to_numpy()
 
     if X.size == 0:
-        # Nothing to score; return empty with expected schema
         return pl.DataFrame(
             schema={
                 "predicted_label": pl.Utf8,
@@ -146,7 +143,7 @@ def predictions(trained_model, feature_table):
 
     raw_pred = model.predict(X)
 
-    # If model output are indices, map to class labels; if already labels, keep.
+
     if np.issubdtype(np.array(raw_pred).dtype, np.integer):
         pred_labels = [classes[i] for i in raw_pred]
     else:
@@ -160,7 +157,6 @@ def predictions(trained_model, feature_table):
         }
     )
 
-    # Optionally carry through a key column if present
     maybe_keys = [c for c in feature_table.columns if c.lower() in {"id", "row_id"}]
     if maybe_keys:
         out = pl.concat([feature_table.select(maybe_keys), out], how="horizontal")

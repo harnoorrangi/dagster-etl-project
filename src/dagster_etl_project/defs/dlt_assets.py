@@ -6,7 +6,6 @@ import dlt
 from dlt_sources.get_data import iris
 
 
-# Make sure this matches your dbt source name/schema
 iris_pipeline = dlt.pipeline(
     pipeline_name="iris_pipeline",
     dataset_name="dlt_main_dataset",
@@ -46,7 +45,6 @@ def dagster_iris_assets(context: AssetExecutionContext, dlt_rs: DagsterDltResour
                 context.log.info(f"Extracted rows_loaded: {num_rows}")
         yield event
 
-    # Attach metadata to the SAME asset key (no output_name)
     context.log_event(
         AssetMaterialization(
             asset_key=TARGET_KEY,
@@ -56,8 +54,8 @@ def dagster_iris_assets(context: AssetExecutionContext, dlt_rs: DagsterDltResour
 
 github_upstreams = [
     AssetSpec(
-        key=key,                # matches the inferred upstream key (currently just "iris")
-        group_name="Github",  # or "github" if you prefer
+        key=key,
+        group_name="Github",
         tags={"source": "github", "kind": "github"},
     )
     for key in dagster_iris_assets.dependency_keys
