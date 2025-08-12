@@ -6,7 +6,7 @@ import dagster as dg
 
 
 dlt_resource = DagsterDltResource()
-database = DuckDBResource(database=dg.EnvVar("DESTINATION__DUCKDB__CREDENTIALS__DATABASE"))
+database = DuckDBResource(database=dg.EnvVar("DYDESTINATION__DUCKDB__CREDENTIALS__DATABASE"))
 
 @dg.definitions
 def resources():
