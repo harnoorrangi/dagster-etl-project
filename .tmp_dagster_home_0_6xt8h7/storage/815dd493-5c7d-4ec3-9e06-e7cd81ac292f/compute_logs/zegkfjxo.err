@@ -1,7 +1,0 @@
-[32m2025-08-10 20:15:24 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 815dd493-5c7d-4ec3-9e06-e7cd81ac292f - 30352 - LOGS_CAPTURED - Started capturing logs in process (pid: 30352).
-[32m2025-08-10 20:15:24 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 815dd493-5c7d-4ec3-9e06-e7cd81ac292f - 30352 - iris_assets - STEP_START - Started execution of step "iris_assets".
-[32m2025-08-10 20:15:25 -0400[0m - dagster - [34mINFO[0m - __ASSET_JOB - 815dd493-5c7d-4ec3-9e06-e7cd81ac292f - iris_assets - Extracted rows_loaded: 150
-[32m2025-08-10 20:15:25 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 815dd493-5c7d-4ec3-9e06-e7cd81ac292f - 30352 - iris_assets - STEP_OUTPUT - Yielded output "dlt_main_dataset__iris" of type "Nothing". (Type check passed).
-[32m2025-08-10 20:15:25 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 815dd493-5c7d-4ec3-9e06-e7cd81ac292f - 30352 - iris_assets - ASSET_MATERIALIZATION - Materialized value dlt_main_dataset iris.
-[32m2025-08-10 20:15:25 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 815dd493-5c7d-4ec3-9e06-e7cd81ac292f - 30352 - iris_assets - ASSET_MATERIALIZATION - Materialized value dlt_main_dataset iris.
-[32m2025-08-10 20:15:25 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 815dd493-5c7d-4ec3-9e06-e7cd81ac292f - 30352 - iris_assets - STEP_SUCCESS - Finished execution of step "iris_assets" in 323ms.

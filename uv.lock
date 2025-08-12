@@ -538,6 +538,20 @@ wheels = [
 ]
 
 [[package]]
+name = "dagster-duckdb-polars"
+version = "0.27.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "dagster" },
+    { name = "dagster-duckdb" },
+    { name = "polars", extra = ["pyarrow"] },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/21/90/dfd5ac00da62466b8434037eee8402e4d2d45ff8b82bc03463a4b40ab5e4/dagster_duckdb_polars-0.27.5.tar.gz", hash = "sha256:51deea83f2b270c11137c2f9ff0cc74f90553b05dcac5804c345aaa675fe6985", size = 7971 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9f/0a/31d59d7d523d2ba2dbc74069044da3d133076769a82ea0614d9083136a66/dagster_duckdb_polars-0.27.5-py3-none-any.whl", hash = "sha256:42aacdc1283a6056338513028faa6087f530c49af5a4616ebf21b9e6ceb4e37f", size = 8632 },
+]
+
+[[package]]
 name = "dagster-etl-project"
 version = "0.1.0"
 source = { editable = "." }
@@ -546,6 +560,7 @@ dependencies = [
     { name = "dagster-aws" },
     { name = "dagster-dbt" },
     { name = "dagster-duckdb" },
+    { name = "dagster-duckdb-polars" },
     { name = "dbt-duckdb" },
     { name = "dlt", version = "1.12.1", source = { registry = "https://pypi.org/simple" }, extra = ["duckdb"], marker = "python_full_version < '3.9.2'" },
     { name = "dlt", version = "1.15.0", source = { registry = "https://pypi.org/simple" }, extra = ["duckdb"], marker = "python_full_version >= '3.9.2'" },
@@ -571,6 +586,7 @@ requires-dist = [
     { name = "dagster-dbt", specifier = ">=0.23" },
     { name = "dagster-dbt", specifier = ">=0.27.5" },
     { name = "dagster-duckdb", specifier = ">=0.27.5" },
+    { name = "dagster-duckdb-polars", specifier = ">=0.27.5" },
     { name = "dbt-duckdb", specifier = ">=1.8" },
     { name = "dlt", extras = ["duckdb"], specifier = ">=1.5" },
     { name = "duckdb", specifier = ">=1.0" },
@@ -2315,6 +2331,11 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/af/ed/0f5ab777b0dc95936074266bc6fd9cf117886ebdd6685589437edfdbb186/polars-1.32.2-cp39-abi3-manylinux_2_24_aarch64.whl", hash = "sha256:d1c53a828eedc215fb0dabc7cef02c6f4ad042157512ddb99840fd42b8da1e8a", size = 35490843 },
     { url = "https://files.pythonhosted.org/packages/91/58/d2840554ef1c69e06a28ee928bdaa0d6a61af12205ff24c096628f217f99/polars-1.32.2-cp39-abi3-win_amd64.whl", hash = "sha256:5e1660a584e89e1d60cd89984feca38a695e491a966581fefe8be99c230ea154", size = 37897347 },
     { url = "https://files.pythonhosted.org/packages/b8/53/4eaaa4f219add46594db21a05a9a5629ec6af20bd859a90668d5a1448abc/polars-1.32.2-cp39-abi3-win_arm64.whl", hash = "sha256:cd390364f6f3927474bd0aed255103195b9d2b3eef0f0c5bb429db5e6311615e", size = 34059100 },
+]
+
+[package.optional-dependencies]
+pyarrow = [
+    { name = "pyarrow" },
 ]
 
 [[package]]

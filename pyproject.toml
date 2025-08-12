@@ -16,6 +16,7 @@ dependencies = [
     "polars",
     "dagster-duckdb>=0.27.5",
     "pyarrow>=21.0.0",
+    "dagster-duckdb-polars>=0.27.5",
 ]
 
 

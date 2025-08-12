@@ -1,5 +1,0 @@
-[32m2025-08-10 22:59:45 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b61710ee-9e50-47a9-b324-980f831059f4 - 54904 - LOGS_CAPTURED - Started capturing logs in process (pid: 54904).
-[32m2025-08-10 22:59:45 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b61710ee-9e50-47a9-b324-980f831059f4 - 54904 - ml__iris_predictions - STEP_START - Started execution of step "ml__iris_predictions".
-[32m2025-08-10 22:59:45 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b61710ee-9e50-47a9-b324-980f831059f4 - 54904 - ml__iris_predictions - STEP_OUTPUT - Yielded output "result" of type "Nothing". (Type check passed).
-[32m2025-08-10 22:59:45 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b61710ee-9e50-47a9-b324-980f831059f4 - 54904 - ml__iris_predictions - ASSET_MATERIALIZATION - Materialized value ml iris_predictions.
-[32m2025-08-10 22:59:45 -0400[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b61710ee-9e50-47a9-b324-980f831059f4 - 54904 - ml__iris_predictions - STEP_SUCCESS - Finished execution of step "ml__iris_predictions" in 83ms.
